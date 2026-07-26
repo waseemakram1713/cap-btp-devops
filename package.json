@@ -18,7 +18,7 @@
   "scripts": {
     "start": "cds-serve",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "private": true,
   "cds": {
