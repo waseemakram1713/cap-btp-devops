@@ -13,7 +13,9 @@
     "@sap/cds-dk": "9.6.0"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "lint": "eslint .",
+    "test": "jest"
   },
   "private": true,
   "cds": {
