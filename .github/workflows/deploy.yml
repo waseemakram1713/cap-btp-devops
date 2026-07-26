@@ -58,9 +58,11 @@ jobs:
       #---------------------------------------------------
       - name: Install Cloud Foundry CLI
         run: |
-          wget -q https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github -O cf.tgz
-          tar -xzf cf.tgz
-          sudo mv cf8 /usr/local/bin/cf
+          wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+          sudo apt-get update
+          sudo apt-get install cf8-cli
+          sudo ln -sf /usr/bin/cf8 /usr/local/bin/cf
           cf version
 
       #---------------------------------------------------
