@@ -18,6 +18,7 @@
   "scripts": {
     "start": "cds-serve",
     "lint": "eslint .",
+    "ci-lint": "npm run lint",
     "test": "jest --passWithNoTests"
   },
   "private": true,
